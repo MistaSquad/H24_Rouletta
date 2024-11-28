@@ -1,5 +1,7 @@
 from machine import Pin
 import random
+from neopixel import NeoPixel
+from time import sleep_ms
 randtala = random.randint(1,8)
 
 segulA = Pin(12, Pin.IN, Pin.PULL_UP)
@@ -50,6 +52,18 @@ def valnartolur():
 
 def rula():
     #setja inn kóða fyrir að ljósið að rúla
+    neo = NeoPixel(Pin(14), 16)
+    staerd = 16
+    
+    staða = 0
+    
+    while True:
+        neo.fill((0, 0, 0))
+        neo[staða] = (255, 0, 0)
+        neo[(staða + 1) % staerd] = (255, 0, 0)
+        neo.write()
+        sleep_ms(100)
+        staða = (staða + 1) % staerd    
     randtala = random.randint(1,8)
     if valinTala1 and randtala==1:
         vann()
