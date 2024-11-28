@@ -9,4 +9,5 @@ og þegar allir eru tilbúnir ýtir einn á takkan tils anð snúa hjólið
 - Vinnandi fær 1/10 af allt sem var búið að setja í pottinn ef að var valið lit eða allan pottinn ef að valið var tölu
 - Maður vinnur þegar hinir leikmannirnir tapa allan peninginn sinn.
 
+## Borðspilhönnun
 ![](https://github.com/MistaSquad/VESKM1/blob/main/bordspil_lok_V24.svg)
