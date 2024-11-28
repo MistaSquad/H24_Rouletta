@@ -1,3 +1,4 @@
+## Tímaverkefni 6
 Spilaleiðbeiningar
 
 - Til að spila þennan leik þurfa að hafa blað og bíjant eða pening
