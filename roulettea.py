@@ -12,7 +12,7 @@ segulG = Pin(18, Pin.IN, Pin.PULL_UP)
 segulH = Pin(19, Pin.IN, Pin.PULL_UP)
 segulI = Pin(20, Pin.IN, Pin.PULL_UP)
 segulJ = Pin(21, Pin.IN, Pin.PULL_UP)
-takki_a = Pin(13, Pin.IN, Pin.PULL_DOWN)
+takki_a = Pin(11, Pin.IN, Pin.PULL_DOWN)
 #hatalari_active = Pin(7, Pin.OUT) # Pinni 7 skilgreindur sem úttakspinni (stafrænn)
 
 
@@ -49,32 +49,38 @@ def valnartolur():
         svartur = True
 
 def rula():
+    #setja inn kóða fyrir að ljósið að rúla
     randtala = random.randint(1,8)
     if valinTala1 and randtala==1:
-        print("Þú vannst!")
+        vann()
     elif valinTala2 and randtala==2:
-        print("Þú vannst!")
+        vann()
     elif valinTala3 and randtala==3:
-        print("Þú vannst!")
+        vann()
     elif valinTala4 and randtala==4:
-        print("Þú vannst!")
+        vann()
     elif valinTala5 and randtala==5:
-        print("Þú vannst!")
+        vann()
     elif valinTala6 and randtala==6:
-        print("Þú vannst!")
+        vann()
     elif valinTala7 and randtala==7:
-        print("Þú vannst!")
+        vann()
     elif valinTala8 and randtala==8:
-        print("Þú vannst!")
+        vann()
     elif raudur and randtala.isOdd():
-        print("Þú vannst!")
+        vann()
     elif svartur and randtala.isEven():
-        print("Þú vannst!")
+        vann()
     else:
-        print("Þú tappaðir")
+        tapp()
 
+def vann():
+    #setja in blikk og tónlist fyrir að vinna og eyða síðan pass
+    print("vann")
+def tapp():
+    print("tapp")
 while True:
-    if takki_a.value == 1:
+    #if takki_a.value == 1:
         valnartolur()
         rula()
 
