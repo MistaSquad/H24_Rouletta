@@ -1,5 +1,5 @@
-## Tímaverkefni 6
-# Spilaleiðbeiningar
+# Tímaverkefni 6
+## Spilaleiðbeiningar
 
 - Til að spila þennan leik þurfa að hafa blað og bíjant eða pening
 - Allir leikmenn fá 1000$ til að byrja með og einn spilapenningur er virði 100$
