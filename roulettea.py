@@ -15,6 +15,7 @@ segulH = Pin(19, Pin.IN, Pin.PULL_UP)
 segulI = Pin(20, Pin.IN, Pin.PULL_UP)
 segulJ = Pin(21, Pin.IN, Pin.PULL_UP)
 takki_a = Pin(11, Pin.IN, Pin.PULL_DOWN)
+neo = NeoPixel(Pin(tala?????????), 16)
 #hatalari_active = Pin(7, Pin.OUT) # Pinni 7 skilgreindur sem úttakspinni (stafrænn)
 
 
@@ -52,11 +53,8 @@ def valnartolur():
 
 def rula():
     #setja inn kóða fyrir að ljósið að rúla
-    neo = NeoPixel(Pin(14), 16)
     staerd = 16
-    
     staða = 0
-    
     while True:
         neo.fill((0, 0, 0))
         neo[staða] = (255, 0, 0)
