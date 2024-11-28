@@ -11,3 +11,5 @@ og þegar allir eru tilbúnir ýtir einn á takkan tils anð snúa hjólið
 
 ## Borðspilhönnun
 ![](https://github.com/MistaSquad/VESKM1/blob/main/bordspil_lok_V24.svg)
+
+![](https://github.com/MistaSquad/VESKM1/blob/main/roulettea.py)
