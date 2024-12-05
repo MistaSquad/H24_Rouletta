@@ -1,4 +1,4 @@
-from machine import Pin
+xfrom machine import Pin
 import random
 from neopixel import NeoPixel
 from time import sleep_ms
@@ -88,6 +88,19 @@ def rula():
 
 def vann():
     #setja in blikk og tónlist fyrir að vinna og eyða síðan pass
+    # Spila sigur tónlist fyrir sigurvegara
+        hatalari.freq(10000)  # Há tíðni
+        hatalari.duty(1000)  # Fullur styrkur
+        sleep_ms(100)  # Spila í stuttan tíma
+        hatalari.duty(0)  # Slökkva
+        sleep_ms(100)  # Bíða stutt
+        victory_melodia = [392, 330, 440, 494, 523]  # Sigurtónar
+        for tone in victory_melodia:
+            hatalari.freq(tone)  # Tíðni fyrir tón
+            hatalari.duty(1000)  # Stillt á styrk
+            sleep_ms(300)  # Spila tón
+            hatalari.duty(0)  # Slökkva á hljóði
+            sleep_ms(100)  # Bíða
     print("vann")
 def tapp():
     print("tapp")
