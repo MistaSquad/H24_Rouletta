@@ -4,8 +4,8 @@ from neopixel import NeoPixel
 from time import sleep_ms
 randtala = random.randint(1,8)
 
-segulA = Pin(35, Pin.IN, Pin.PULL_UP)
-segulB = Pin(0, Pin.IN, Pin.PULL_UP)
+segulA = Pin(48, Pin.IN, Pin.PULL_UP)
+segulB = Pin(47, Pin.IN, Pin.PULL_UP)
 segulC = Pin(10, Pin.IN, Pin.PULL_UP)
 segulD = Pin(11, Pin.IN, Pin.PULL_UP)
 segulE = Pin(8, Pin.IN, Pin.PULL_UP)
@@ -20,6 +20,7 @@ neo = NeoPixel(Pin(38), 16)
 
 
 def valnartolur():
+    '''
     if segulA.value == 1:
         valinTala1 = True
 
@@ -50,39 +51,51 @@ def valnartolur():
         
     if segulJ.value == 1:
         svartur = True
+        '''
+    val=input(int("veldu tölu"))
 
 def rula():
     #setja inn kóða fyrir að ljósið að rúla
     staerd = 16
     staða = 0
     while True:
+        randtala = random.randint(1,8)
         neo.fill((0, 0, 0))
         neo[staða] = (255, 0, 0)
         neo[(staða + 1) % staerd] = (255, 0, 0)
         neo.write()
         sleep_ms(100)
         staða = (staða + 1) % staerd    
-    randtala = random.randint(1,8)
     if valinTala1 and randtala==1:
         vann()
+        print("1 vann")
     elif valinTala2 and randtala==2:
         vann()
+        print("2 vann")
     elif valinTala3 and randtala==3:
         vann()
+        print("3 vann")
     elif valinTala4 and randtala==4:
         vann()
+        print("4 vann")
     elif valinTala5 and randtala==5:
         vann()
+        print("5 vann")
     elif valinTala6 and randtala==6:
         vann()
+        print("6 vann")
     elif valinTala7 and randtala==7:
         vann()
+        print("7 vann")
     elif valinTala8 and randtala==8:
         vann()
+        print("8 vann")
     elif raudur and randtala.isOdd():
         vann()
+        print("raudur vann")
     elif svartur and randtala.isEven():
         vann()
+        print("svartur vann")
     else:
         tapp()
 
