@@ -1,21 +1,21 @@
-xfrom machine import Pin
+from machine import Pin
 import random
 from neopixel import NeoPixel
 from time import sleep_ms
 randtala = random.randint(1,8)
 
-segulA = Pin(12, Pin.IN, Pin.PULL_UP)
-segulB = Pin(13, Pin.IN, Pin.PULL_UP)
-segulC = Pin(14, Pin.IN, Pin.PULL_UP)
-segulD = Pin(15, Pin.IN, Pin.PULL_UP)
-segulE = Pin(16, Pin.IN, Pin.PULL_UP)
-segulF = Pin(17, Pin.IN, Pin.PULL_UP)
+segulA = Pin(35, Pin.IN, Pin.PULL_UP)
+segulB = Pin(0, Pin.IN, Pin.PULL_UP)
+segulC = Pin(10, Pin.IN, Pin.PULL_UP)
+segulD = Pin(11, Pin.IN, Pin.PULL_UP)
+segulE = Pin(8, Pin.IN, Pin.PULL_UP)
+segulF = Pin(9, Pin.IN, Pin.PULL_UP)
 segulG = Pin(18, Pin.IN, Pin.PULL_UP)
-segulH = Pin(19, Pin.IN, Pin.PULL_UP)
-segulI = Pin(20, Pin.IN, Pin.PULL_UP)
-segulJ = Pin(21, Pin.IN, Pin.PULL_UP)
-takki_a = Pin(11, Pin.IN, Pin.PULL_DOWN)
-neo = NeoPixel(Pin(tala?????????), 16)
+segulH = Pin(17, Pin.IN, Pin.PULL_UP)
+segulI = Pin(14, Pin.IN, Pin.PULL_UP)
+segulJ = Pin(13, Pin.IN, Pin.PULL_UP)
+takki_a = Pin(39, Pin.IN, Pin.PULL_DOWN)
+neo = NeoPixel(Pin(38), 16)
 #hatalari_active = Pin(7, Pin.OUT) # Pinni 7 skilgreindur sem úttakspinni (stafrænn)
 
 
@@ -89,18 +89,18 @@ def rula():
 def vann():
     #setja in blikk og tónlist fyrir að vinna og eyða síðan pass
     # Spila sigur tónlist fyrir sigurvegara
-        hatalari.freq(10000)  # Há tíðni
-        hatalari.duty(1000)  # Fullur styrkur
-        sleep_ms(100)  # Spila í stuttan tíma
-        hatalari.duty(0)  # Slökkva
-        sleep_ms(100)  # Bíða stutt
-        victory_melodia = [392, 330, 440, 494, 523]  # Sigurtónar
-        for tone in victory_melodia:
-            hatalari.freq(tone)  # Tíðni fyrir tón
-            hatalari.duty(1000)  # Stillt á styrk
-            sleep_ms(300)  # Spila tón
-            hatalari.duty(0)  # Slökkva á hljóði
-            sleep_ms(100)  # Bíða
+    hatalari.freq(10000)  # Há tíðni
+    hatalari.duty(1000)  # Fullur styrkur
+    sleep_ms(100)  # Spila í stuttan tíma
+    hatalari.duty(0)  # Slökkva
+    sleep_ms(100)  # Bíða stutt
+    victory_melodia = [392, 330, 440, 494, 523]  # Sigurtónar
+    for tone in victory_melodia:
+        hatalari.freq(tone)  # Tíðni fyrir tón
+        hatalari.duty(1000)  # Stillt á styrk
+        sleep_ms(300)  # Spila tón
+        hatalari.duty(0)  # Slökkva á hljóði
+        sleep_ms(100)  # Bíða
     print("vann")
 def tapp():
     print("tapp")
