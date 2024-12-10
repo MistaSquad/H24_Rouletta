@@ -1,4 +1,6 @@
 # Tímaverkefni 6
+## Höfundar
+Aleksei Jónsson, Ingvi Sigurðarson og Sölvi Rafn Kristmannsson
 ## Spilaleiðbeiningar
 
 - Til að spila þennan leik þurfa að hafa blað og bíjant eða pening
