@@ -24,3 +24,4 @@ https://share.icloud.com/photos/01792mjJ4-Ao8Ma9pm3AQe-hg
 ![](https://github.com/MistaSquad/VESKM1/blob/main/bordspil_lok_V24.svg)
 
 ## Kóðaskrá
+https://github.com/MistaSquad/H24_Rouletta/blob/main/code.py
