@@ -18,6 +18,7 @@ og þegar allir eru tilbúnir ýtir einn á takkan tils anð snúa hjólið
 ![](https://github.com/MistaSquad/H24_Rouletta/blob/main/IMG_1407.jpg)
 ![](https://github.com/MistaSquad/H24_Rouletta/blob/main/IMG_1411.jpg)
 ![](https://github.com/MistaSquad/H24_Rouletta/blob/main/IMG_1412.jpg)
+
 ## Borðspilhönnun
 ![](https://github.com/MistaSquad/VESKM1/blob/main/bordspil_lok_V24.svg)
 
