@@ -1,7 +1,4 @@
 # Tímaverkefni 6
-## Höfundar
-Aleksei Jónsson, Ingvi Sigurðarson og Sölvi Rafn Kristmannsson
-
 ## lýsing
 Leikurinn gengur út á að veðja á tölu eða lit með spilapeningum, snúa hjóli, vinna hluta eða allan pottinn eftir úrslitum og verða síðasti leikmaðurinn með pening.
 
