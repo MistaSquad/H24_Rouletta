@@ -1,0 +1,120 @@
+from machine import Pin, PWM
+import random
+from neopixel import NeoPixel
+from time import sleep_ms
+
+# Pin setup for magnetic switches
+segul_pins = {
+    1: Pin(48, Pin.IN, Pin.PULL_UP),
+    2: Pin(47, Pin.IN, Pin.PULL_UP),
+    3: Pin(10, Pin.IN, Pin.PULL_UP),
+    4: Pin(11, Pin.IN, Pin.PULL_UP),
+    5: Pin(8, Pin.IN, Pin.PULL_UP),
+    6: Pin(9, Pin.IN, Pin.PULL_UP),
+    7: Pin(18, Pin.IN, Pin.PULL_UP),
+    8: Pin(17, Pin.IN, Pin.PULL_UP),
+    'red': Pin(14, Pin.IN, Pin.PULL_UP),
+    'black': Pin(13, Pin.IN, Pin.PULL_UP),
+}
+
+takki_a = Pin(39, Pin.IN, Pin.PULL_DOWN)  # Button to start the spin
+neo = NeoPixel(Pin(38), 16)              # LEDs
+hatalari = PWM(Pin(37))                  # Speaker for sounds
+hatalari.duty(0)                         # Start with no sound
+
+# State variables
+selected_choice = None  # Holds the selected pin (number or color)
+
+
+def detect_selection():
+    """Detects which pin (SegulA-J, Red, or Black) has a magnet placed on it."""
+    global selected_choice
+    print("Veldu með því að setja segul á pinna (1-8, rauður, svartur):")
+    selected_choice = None
+
+    while selected_choice is None:  # Wait until a choice is detected
+        for name, pin in segul_pins.items():
+            if pin.value() == 0:  # Magnet detected (pin pulled low)
+                selected_choice = name
+                print(f"Þú valdir: {selected_choice}")
+                return  # Exit function once a selection is detected
+
+
+def spin_wheel():
+    """Simulates the spinning of the roulette wheel."""
+    staerd = 16
+    staða = 0
+    spin_speed = 100
+    for i in range(30):  # Simulate the spinning effect
+        neo.fill((0, 0, 0))
+        neo[staða] = (255, 0, 0) if i % 2 == 0 else (0, 255, 0)  # Alternate colors for effect
+        neo.write()
+        sleep_ms(spin_speed)
+        staða = (staða + 1) % staerd
+        spin_speed += 10  # Gradually slow down
+
+    # Determine the random result
+    randtala = random.randint(1, 8)
+    print(f"Roulette niðurstaða: {randtala} {'(Odd/Rauður)' if randtala % 2 == 1 else '(Even/Svartur)'}")
+    return randtala
+
+
+def check_result(randtala):
+    """Checks if the selected choice matches the random result."""
+    global selected_choice
+
+    if isinstance(selected_choice, int) and selected_choice == randtala:
+        # Match by number
+        return True
+    elif selected_choice == 'red' and randtala % 2 == 1:
+        # Match by red (odd numbers)
+        return True
+    elif selected_choice == 'black' and randtala % 2 == 0:
+        # Match by black (even numbers)
+        return True
+    return False
+
+
+def play_victory_sound():
+    """Plays the victory sound."""
+    victory_melodia = [392, 330, 440, 494, 523]
+    for tone in victory_melodia:
+        hatalari.freq(tone)
+        hatalari.duty(512)
+        sleep_ms(300)
+        hatalari.duty(0)
+        sleep_ms(100)
+
+
+def play_loss_sound():
+    """Plays the loss sound."""
+    for _ in range(3):  # Beep 3 times
+        hatalari.freq(200)
+        hatalari.duty(512)
+        sleep_ms(200)
+        hatalari.duty(0)
+        sleep_ms(200)
+
+
+# Main game loop
+while True:
+    print("Bíddu eftir vali...")
+    detect_selection()  # Wait for user to select a pin (SegulA-J, Red, Black)
+
+    print("Ýttu á takkann til að byrja!")
+    while takki_a.value() == 0:  # Wait until button is pressed
+        pass  # Do nothing until button is pressed
+
+    print("Hjólið byrjar að snúast!")
+    result = spin_wheel()  # Spin the wheel and get the result
+
+    if check_result(result):
+        print("Þú vannst!")
+        play_victory_sound()
+    else:
+        print("Þú tapaðir!")
+        play_loss_sound()
+
+    # Reset the selection
+    selected_choice = None
+    print("Nýr leikur byrjar. Veldu aftur!")
