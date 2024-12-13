@@ -13,7 +13,7 @@ og þegar allir eru tilbúnir ýtir einn á takkan tils anð snúa hjólið
 - Maður vinnur þegar hinir leikmannirnir tapa allan peninginn sinn.
 
 ## Myndband
-https://share.icloud.com/photos/01792mjJ4-Ao8Ma9pm3AQe-hg 
+-
 
 ## Ljósmyndir
 ![](https://github.com/MistaSquad/H24_Rouletta/blob/main/IMG_1407.jpg)
